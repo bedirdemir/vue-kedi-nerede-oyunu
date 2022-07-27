@@ -1,9 +1,9 @@
 <template>
   <div id="app" class="container">
-    <component
-      :is="currentPage">
+      <component
+        :is="currentPage">
 
-    </component>
+      </component>
   </div>
 </template>
 

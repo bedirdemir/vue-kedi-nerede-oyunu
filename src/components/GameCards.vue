@@ -1,14 +1,15 @@
 <template>
     <div class="d-flex flex-column">
         <div class="d-flex justify-content-center">
-            <div
-                v-for="card in cards"
-                :key="card.id" 
-                class="card m-3"
-                style="width: 100%;"
-                id="card">
-                    <img @click="selectImage(card.id, $event)" :src="card.image" class="">
-            </div>
+                <div
+                    v-for="card in cards"
+                    :key="card.id" 
+                    class="card m-3 animate__animated"
+                    style="width: 100%;"
+                    id="card">
+                        <img @click="selectImage(card.id, $event)" :src="card.image" class="">
+                </div>
+
         </div>
         <app-secret-card></app-secret-card>
     </div>
@@ -52,6 +53,7 @@ export default {
             this.selectedCard = cardID;
             EventBus.$emit("isSelected", true);
             el.srcElement.classList.toggle("selected");
+            el.srcElement.parentElement.classList.toggle("animate__headShake");
         }
     },
     created(){
